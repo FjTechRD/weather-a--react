@@ -1,16 +1,6 @@
-import "./style/App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import WeatherCard from "./components/WeatherCard";
-import Loader from "./components/Loader";
-import useChangerBackground from "./hooks/useChangerBackground";
-
-function App() {
+const useApiGlobal = () => {
   const [coords, setCords] = useState();
   const [weather, setWeather] = useState();
-  const [temperature, setTemperature] = useState();
-  const { bgChanger } = useChangerBackground();
-  const [loading, setLoading] = useState(true);
 
   // ----------------------- REQUEST LOCATION API ----------------------------- \\
   useEffect(() => {
@@ -44,19 +34,7 @@ function App() {
     }
   }, [coords]);
 
-  // ----------------------- BG CHANGER ----------------------------- \\
+  return { weather };
+};
 
-  // ----------------------- JSX RETURN ----------------------------- \\
-
-  return (
-    <div className="App" style={bgChanger}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <WeatherCard weather={weather} temperature={temperature} />
-      )}
-    </div>
-  );
-}
-
-export default App;
+export default useApiGlobal;

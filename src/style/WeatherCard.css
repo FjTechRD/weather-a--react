@@ -2,14 +2,14 @@
   --white: #fff;
   --primaryColor: #00fff7;
   --secundaryColor: #00bdff;
-  --bgColor: #85858550;
+  --bgColor: #85858560;
   --hoverColor: transparent;
   --spanColor: #0e3476;
 }
 
 .weather__card {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   background-color: var(--bgColor);
@@ -19,6 +19,7 @@
   -webkit-box-shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 22px 0px rgba(0, 0, 0, 0.75);
+  height: 25rem;
 }
 
 .weather__header {
